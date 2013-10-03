@@ -25,6 +25,12 @@ div.liveGraph div.bars div[bar="tb2"] span { background-color:#00f; } /* ONLY MA
 div.liveGraph div.bars div[bar="tb1"] span { background-color:#0f0; } /* ONLY MATCHES THE THIRD BAR */
 
 
+
+
+
+
+
+
 /* Other page styling */
 
 h1 { font-family:Cambria;font-size:24pt;margin:0;padding:0;margin-bottom:10px; }
