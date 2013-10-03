@@ -5,3 +5,4 @@ LiveGraph is a jQuery Plugin that allows the creation of simple bar charts from 
 
 LiveGraphs can be customized to suit different uses, bars can be styled using CSS to change background colours / patterns and labels can have different font styles / sizes.
 
+A demo can be found here: https://raw.github.com/lampieg/LiveGraph/master/demo/index.html
