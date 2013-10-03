@@ -1,8 +1,8 @@
 /*!
- * LiveGraph for jQuery v0.0.1
+ * LiveGraph for jQuery v1.0.0
  * http://github.com/lampieg/livegraph
  *
- * Copyright © 2013 lampieg (admin@lampieg.co.uk)
+ * Copyright ï¿½ 2013 lampieg (admin@lampieg.co.uk)
  * Released under the MIT license
  */
 
