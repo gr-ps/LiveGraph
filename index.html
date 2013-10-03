@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>LiveGraph for jQuery by lampieg</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">LiveGraph for jQuery</h1>
+        <p class="header">Live Animated Charts</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/lampieg/LiveGraph/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/lampieg/LiveGraph/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/lampieg/LiveGraph">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/lampieg">lampieg</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="livegraph-for-jquery" class="anchor" href="#livegraph-for-jquery"><span class="octicon octicon-link"></span></a>LiveGraph for jQuery</h1>
+
+<p><img src="https://raw.github.com/lampieg/LiveGraph/master/demo/inline.jpg" alt="LiveGraph" title="LiveGraph"></p>
+
+<p>LiveGraph is a jQuery Plugin that allows the creation of simple bar charts from a simple JavaScript Object or an HTML table. LiveGraph allows updating of the values used to create the bar chart - by dynamically adjusting the height of the bars and rescaling the graph. Charts created with LiveGraph can easily be linked to a website's backend using AJAX to allow a graph to automatically update to display a set of data.</p>
+
+<p>LiveGraphs can be customized to suit different uses, bars can be styled using CSS to change background colours / patterns and labels can have different font styles / sizes.</p>
+
+<h2>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p>The demo is contained within the source, in the "demo" directory.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>LiveGraph for jQuery requires jQuery v1.7+</p>
+
+<p>Data can be supplied as a HTML table.</p>
+
+<p>Include jQuery as normal, then the following code needs to be added to the <code>&lt;head&gt;</code> section of the page you wish the graph to be shown on:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"jquery.livegraph.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>Obviously adjusting according to the directory you've saved <code>jquery.livegraph.js</code> in.</p>
+
+<p>Then somewhere in <code>&lt;body&gt;</code> you'll want to create your graph with a bit of JavaScript:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#somediv'</span><span class="p">).</span><span class="nx">liveGraph</span><span class="p">({</span>
+                        <span class="nx">height</span> <span class="o">:</span> <span class="mi">350</span><span class="p">,</span>
+                        <span class="nx">barWidth</span> <span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="nx">barGapSize</span> <span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="nx">data</span> <span class="o">:</span> <span class="s1">'table.dataforgraph'</span><span class="p">,</span>
+                        <span class="nx">hideData</span> <span class="o">:</span> <span class="kc">true</span>
+                    <span class="p">});</span>
+</pre></div>
+
+<p>Now <code>#somediv</code> should contain a graph.</p>
+
+<h2>
+<a name="full-docs" class="anchor" href="#full-docs"><span class="octicon octicon-link"></span></a>Full Docs</h2>
+
+<p>Initialising a graph:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#somediv'</span><span class="p">).</span><span class="nx">liveGraph</span><span class="p">(</span> <span class="nx">settings</span> <span class="p">);</span>
+</pre></div>
+
+<p>The initial settings are set at the creation of the LiveGraph object using the settings object.</p>
+
+<h4>
+<a name="settings-object" class="anchor" href="#settings-object"><span class="octicon octicon-link"></span></a>Settings Object</h4>
+
+<p>Default settings are shown in brackets.</p>
+
+<ul>
+<li>height - integer, the maximum height for the entire chart, in pixels. (400)</li>
+<li>barWidth - integer, the width of each bar, in pixels. (50)</li>
+<li>barGapSize - integer, the spacing between bars, in pixels. (5)</li>
+<li>animate - boolean, where animation should be enabled. (true)</li>
+<li>animTime - integer, the time taken for animation to complete, in milliseconds. (2000)</li>
+<li>hideData - boolean, whether to hide the data table or not. (true)</li>
+<li>data - object OR string, the input data. If using string based CSS input, you must specify it as "table#id" or "table.class". (object based demo values)</li>
+</ul><h4>
+<a name="data-object" class="anchor" href="#data-object"><span class="octicon octicon-link"></span></a>Data Object</h4>
+
+<p>Here's a sample data object:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">bar1</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">label</span><span class="o">:</span> <span class="s2">"Bar 1"</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">2</span>
+  <span class="p">},</span>
+  <span class="nx">bar2</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">label</span><span class="o">:</span> <span class="s2">"Bar 2"</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="nx">bar3</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">label</span><span class="o">:</span> <span class="s2">"Bar 3"</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">3</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>You can specify as many bars as you wish, there is no limit. Obviously this will determine the overall graph's width.</p>
+
+<p>The table method will assume that the first column contains labels, and the second column values. It will create an object naming each bar as "tb#" where # is the bar number.</p>
+
+<h4>
+<a name="updating-the-graph" class="anchor" href="#updating-the-graph"><span class="octicon octicon-link"></span></a>Updating the Graph</h4>
+
+<p>With a pre-existing graph, you can update the labels and / or values simply by re-issuing a data object.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#somediv'</span><span class="p">).</span><span class="nx">liveGraph</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+</pre></div>
+
+<p>When updating the data object can be shortened for ease so that only data that is to be updated is actually needed. Shown here:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">bar1</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="nx">bar2</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">label</span><span class="o">:</span> <span class="s2">"New Label"</span>
+  <span class="p">},</span>
+  <span class="nx">bar3</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">7</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>All these will be correctly interpretted, as well as the original per-bar object method.</p>
+
+<h4>
+<a name="changing-settings-after-initialise" class="anchor" href="#changing-settings-after-initialise"><span class="octicon octicon-link"></span></a>Changing Settings after Initialise</h4>
+
+<p>All settings can be accessed and modified using</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#somediv'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'liveGraph'</span><span class="p">).</span><span class="nx">settings</span>
+</pre></div>
+
+<p>For example, to disable animation:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#somediv'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'liveGraph'</span><span class="p">).</span><span class="nx">settings</span><span class="p">.</span><span class="nx">animate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+
+<p><strong>Updating graph data in this way will not work, please use the "update" method.</strong></p>
+
+<h2>
+<a name="styling" class="anchor" href="#styling"><span class="octicon octicon-link"></span></a>Styling</h2>
+
+<p>View the "livegraph.css" file in the demo directory for a starting point for styling.</p>
+
+<p>The graph itself is created using divs with the following classes:</p>
+
+<ul>
+<li>liveGraph</li>
+<li>bars</li>
+<li>bar</li>
+</ul><p>To access the bar itself, for setting backgrounds etc, you will need to use the <code>span</code> inside each <code>div.bar</code>.</p>
+
+<p>Some properties may not seem to work, this is because the plugin uses some inline <code>style</code> attributes, so any border rules will need to override the inline properties. Eg:</p>
+
+<div class="highlight highlight-css"><pre><span class="nt">div</span><span class="nc">.liveGraph</span> <span class="nt">div</span><span class="nc">.bars</span> <span class="nt">div</span><span class="nc">.bar</span> <span class="nt">span</span> <span class="p">{</span>
+  <span class="k">border</span><span class="o">:</span><span class="k">none</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
