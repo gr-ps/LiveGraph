@@ -13,6 +13,10 @@
 		"name": "Lampieg",
 		"email": "github@lampieg.co.uk"
 	},
+	"maintainers": [{
+		"name": "Lampieg",
+		"email": "github@lampieg.co.uk"
+	}],
 	"licenses": [
 		{
 			"type": "MIT",
@@ -21,5 +25,8 @@
 	],
 	"dependencies": {
 		"jquery": ">=1.7"
-	}
+	},
+	"homepage": "https://github.com/lampieg/livegraph",
+	"docs": "https://github.com/lampieg/livegraph",
+	"bugs": "https://github.com/lampieg/livegraph/issues"
 }
