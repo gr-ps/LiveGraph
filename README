@@ -1,6 +1,5 @@
---------------------
 LiveGraph for jQuery
---------------------
+====================
 
 LiveGraph is a jQuery Plugin that allows the creation of simple bar charts from a simple JavaScript Object or an HTML table. LiveGraph allows updating of the values used to create the bar chart - by dynamically adjusting the height of the bars and rescaling the graph. Charts created with LiveGraph can easily be linked to a website's backend using AJAX to allow a graph to automatically update to display a set of data.
 
